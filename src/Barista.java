@@ -7,19 +7,33 @@ public class Barista {
         this.beanCount = beanCount;
         this.cashBox = 0;
     }
-    public void makeCoffee(){
+    public int getCoffeePrice(){
 
     }
-    public void takeOrder(){
+    public String makeCoffee(String menu){
+        beanCount --;
+        System.out.println("[바리스타]" + beanCount + "가 남았습니다.");
+        System.out.println("[바리스타]" + menu + "를 만들었습니다.");
+        return "커피를 만들었습니다";
 
     }
-    public void checkBeanCount(){
-
+    public String takeOrder(){
+        System.out.println("[바리스타] " +menu + "가 주문되었습니다");
+        System.out.println("[바리스타] " + money + "을 받았습니다");
+        if(isBean() == true){
+            System.out.println("[바리스타] 원두가 없어서 주문이 불가능합니다.");
+            return 0;
+        }
+        cashBox = cashBox + money;
+        System.out.println("[바리스타]" + cashBox + "원을 금고에 보관하였습니다.");
+        String madeCoffee =makeCoffee();
     }
-    void main(){
-        Customer customer = new Customer();
-        Barista barista = new Barista();
-
+    public boolean isBean() {
+        if (beanCount <= 0) {
+            return true;
+        else
+            return false;
+        }
     }
 
 }

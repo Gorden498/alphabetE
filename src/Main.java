@@ -10,7 +10,17 @@ void main() {
         // 언제든 <shortcut actionId="ToggleLineBreakpoint"/>을(를) 눌러 중단점을 더 추가할 수 있습니다.
         IO.println("i = " + i);
     }
-    Customer customer1 = new Customer(4000);
     customer1.print();
     // 변수로 선언했기 때문에 소문자로 시작
-}
+
+        //Customer customer = new Customer();
+        //Barista barista = new Barista(coffeePrice: 3000, beanCount:2);
+    void main(){
+        Customer customer1 = new Customer();
+        customer1.order(barista, menuName: "아메리카노");
+
+        System.out.println("------------")
+
+        Customer customer2 = new Customer();
+        customer2.order(barista, menuName: "아메리카노:")
+    }
